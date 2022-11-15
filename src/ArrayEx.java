@@ -66,15 +66,48 @@ public class ArrayEx {
 
     }
 
+    // insert
+    void Chen(int x, int y, int n) // chen x vao vi tri Y
+    {
+        n++; // increase N to 1
+        for(int i = n - 1; i > y; i--) // pull all elements in array back 1 spot
+            A[i] = A[i-1]; // place x to y posiiton
+        A[y] = x;
+
+    }
+
+    void printAll() {
+        for(int i = 0; i < A.length; i++) {
+            System.out.println(A[i]);
+        }
+    }
+
+    // delete element
+    void deleteElement(int y, int n) { // Delete an element a position y
+        for (int i = y; i < n; i++)
+            A[i] = A[i + 1];
+        n--;
+    }
 
     public static void main(String[] args)
     {
         ArrayEx arr = new ArrayEx();
+        int n = 5;
 //        arr.NhapNN(5);
 //        arr.Nhap(5);
 //        System.out.println("\nTong cac phan tu: " + arr.Tong(5));
 //        System.out.println("\nTong cac so le: " + arr.TongSoLe(5));
-        System.out.println("\nTBT cac so chan: " + arr.TbtSoChan());
+//        System.out.printf("\nTBT cac so chan: " + arr.TbtSoChan());
+
+        // before inserting
+        arr.printAll();
+        arr.Chen(8, 1, n); // Insert 8 into position 1
+
+        // after inserted
+        arr.printAll();
+        arr.deleteElement(1, n);
+        arr.printAll();
+
     }
 
 }
