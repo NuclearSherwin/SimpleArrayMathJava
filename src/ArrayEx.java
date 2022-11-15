@@ -35,9 +35,9 @@ public class ArrayEx {
     }
 
     // tinh tong ca so le
-    int TongSoLe() {
+    int TongSoLe(int n) {
         int SumLe = 0;
-        for (int i = 0; i < A.length; i++) {
+        for (int i = 0; i < n; i++) {
             if (A[i] % 2 == 1){
                 SumLe = SumLe + A[i];
             }
@@ -57,9 +57,13 @@ public class ArrayEx {
                 count++;
             }
         }
-        tbChan = SumChan / count;
+        if (count == 0)
+            return 0;
+        else{
+            tbChan = SumChan / count;
+            return tbChan;
+        }
 
-        return tbChan;
     }
 
 
@@ -69,7 +73,7 @@ public class ArrayEx {
 //        arr.NhapNN(5);
 //        arr.Nhap(5);
 //        System.out.println("\nTong cac phan tu: " + arr.Tong(5));
-//        System.out.println("\nTong cac so le: " + arr.TongSoLe());
+//        System.out.println("\nTong cac so le: " + arr.TongSoLe(5));
         System.out.println("\nTBT cac so chan: " + arr.TbtSoChan());
     }
 
