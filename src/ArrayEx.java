@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class ArrayEx {
-    public static int[] A = new int[] {1, 2, 3, 4,5, 6, 7, 8, 9, 10}; // Khai bao A co 10 phan tu
+    public static int[] A = new int[] {1, 2, 3, 4, 5, 6, 8, 7, 10, 9}; // Khai bao A co 10 phan tu
 
     void Nhap(int n){
         Scanner sc = new Scanner(System.in);
@@ -89,6 +89,19 @@ public class ArrayEx {
         n--;
     }
 
+    // sort array increment
+    void incrementSort() {
+        for (int i = 0; i < A.length; i++)
+            for (int j = A.length -1; j > i; j--)
+                if (A[j] < A[j-1]){
+                    int t = A[j];
+                    A[j] = A[j-1];
+                    A[j-1] = t;
+                }
+    }
+
+    // searching algorithm
+
     public static void main(String[] args)
     {
         ArrayEx arr = new ArrayEx();
@@ -108,6 +121,8 @@ public class ArrayEx {
         arr.deleteElement(1, n);
         arr.printAll();
 
+        // sorting the array
+        arr.incrementSort();
     }
 
 }
