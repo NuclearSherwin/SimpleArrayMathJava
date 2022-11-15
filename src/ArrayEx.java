@@ -101,6 +101,17 @@ public class ArrayEx {
     }
 
     // searching algorithm
+    void searchELement(int x) { // search X in N element
+        int founded = -1;
+        for (int i = 0; i < A.length; i++)
+            if (A[i] == x)
+                founded = i;
+
+        if (founded == -1)
+            System.out.println("X not found");
+        else
+            System.out.printf("Yes, I founded %d at %d", x, founded);
+    }
 
     public static void main(String[] args)
     {
@@ -123,6 +134,9 @@ public class ArrayEx {
 
         // sorting the array
         arr.incrementSort();
+
+        // searching
+        arr.searchELement(8);
     }
 
 }
