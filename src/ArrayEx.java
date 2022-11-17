@@ -71,7 +71,7 @@ public class ArrayEx {
     {
         n++; // increase N to 1
         for(int i = n - 1; i > y; i--) // pull all elements in array back 1 spot
-            A[i] = A[i-1]; // place x to y posiiton
+            A[i] = A[i-1]; // place x to y position
         A[y] = x;
 
     }
